@@ -1,0 +1,5 @@
+build
+chatgpt_voice_assistant.egg-info
+.github
+.pytest_cache
+env

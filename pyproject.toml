@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chatgpt_voice_assistant"
+version = "1.3.0"
+authors = [
+  { name="Jake Cyr", email="cyrjake@gmail.com" },
+]
+dependencies = [
+  "openai >= 0.27.2, < 0.28",
+  "SpeechRecognition >= 3.9.0, < 4.0",
+  "pyaudio >= 0.2.13, < 0.3",
+  "gtts >= 2.3.1, < 2.4",
+]
+description = "Package to speak with OpenAI's GPT-3 model"
+readme = "README.md"
+requires-python = ">=3.8"
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "mock",
+  "coverage",
+  "black",
+  "pylint",
+  "isort",
+  "flake8",
+  "mypy",
+  "types-pyaudio",
+  "types-mock",
+]
+
+[project.scripts]
+chatgpt-assist = "chatgpt_voice_assistant.main:main"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+pythonpath = [
+  "."
+]
+
+[tool.setuptools]
+packages = ["chatgpt_voice_assistant"]
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
