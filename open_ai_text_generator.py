@@ -12,7 +12,7 @@ class OpenAITextGenerator(TextGenerator):
 
     def __init__(
         self,
-        open_ai_key: "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",
+        open_ai_key: "sk-key",
         model="gpt-3.5-turbo",
         max_tokens=200,
         temperature=0.7,
