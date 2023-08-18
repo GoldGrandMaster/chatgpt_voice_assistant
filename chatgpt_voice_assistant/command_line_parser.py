@@ -71,23 +71,23 @@ class CommandLineParser(OptionsParser):
             type=float,
         )
 
-        # parsed_args: argparse.Namespace = parser.parse_args()
+        parsed_args: argparse.Namespace = parser.parse_args()
 
-        # if parsed_args.open_ai_key is None:
-        #     parser.error(
-        #         "Open AI Secret Key not specified and OPENAI_API_KEY not set in environment"
-        #     )
+        if parsed_args.open_ai_key is None:
+            parser.error(
+                "Open AI Secret Key not specified and OPENAI_API_KEY not set in environment"
+            )
 
-        # return CommandLineArguments(
-        #     input_device_name=parsed_args.input_device_name,
-        #     lang=parsed_args.lang,
-        #     log_level=parsed_args.log_level,
-        #     max_tokens=parsed_args.max_tokens,
-        #     open_ai_key=parsed_args.open_ai_key,
-        #     open_ai_model=parsed_args.open_ai_model,
-        #     safe_word=parsed_args.safe_word,
-        #     speech_rate=parsed_args.speech_rate,
-        #     tld=parsed_args.tld,
-        #     tts=parsed_args.tts,
-        #     wake_word=parsed_args.wake_word,
-        # )
+        return CommandLineArguments(
+            input_device_name=parsed_args.input_device_name,
+            lang=parsed_args.lang,
+            log_level=parsed_args.log_level,
+            max_tokens=parsed_args.max_tokens,
+            open_ai_key=parsed_args.open_ai_key,
+            open_ai_model=parsed_args.open_ai_model,
+            safe_word=parsed_args.safe_word,
+            speech_rate=parsed_args.speech_rate,
+            tld=parsed_args.tld,
+            tts=parsed_args.tts,
+            wake_word=parsed_args.wake_word,
+        )
