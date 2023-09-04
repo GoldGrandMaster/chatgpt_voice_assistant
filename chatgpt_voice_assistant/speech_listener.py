@@ -23,21 +23,21 @@ from chatgpt_voice_assistant.models.input_device import InputDevice
 class SpeechListener(Listener):
     """Class to listen to speech convert it to text"""
 
-    def __init__(self, input_device: InputDevice) -> None:
-        self._recognizer = Recognizer()
-        self._input_device: InputDevice = input_device
+    # def __init__(self, input_device: InputDevice) -> None:
+    #     self._recognizer = Recognizer()
+    #     self._input_device: InputDevice = input_device
 
-    def listen(self) -> str:
-        """
-        Listen on the specified input device for speech and return the heard text.
-        :return: the text from the speech listened to.
-        """
-        with Microphone(device_index=self._input_device.index) as source:
-            logging.info(f"Listening for input with mic '{self._input_device.name}'...")
-            audio: AudioData = self._recognizer.listen(source)
-            logging.debug("Received speech input.")
+    # def listen(self) -> str:
+    #     """
+    #     Listen on the specified input device for speech and return the heard text.
+    #     :return: the text from the speech listened to.
+    #     """
+    #     with Microphone(device_index=self._input_device.index) as source:
+    #         logging.info(f"Listening for input with mic '{self._input_device.name}'...")
+    #         audio: AudioData = self._recognizer.listen(source)
+    #         logging.debug("Received speech input.")
 
-        return self._recognize_text_in_audio(audio)
+    #     return self._recognize_text_in_audio(audio)
 
     def set_input_device(self, input_device: InputDevice) -> None:
         """Set the input device to use when listening.
