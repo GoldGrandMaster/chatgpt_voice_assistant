@@ -65,15 +65,15 @@ def main() -> None:
     # set interrupt to exit the process when Cmd+C / Ctrl+C is hit
     set_keyboard_interrupt_handler()
 
-    conversation = Conversation(
-        listener=listener,
-        text_generator=text_generator,
-        responder=responder,
-        safe_word=options.safe_word,
-        wake_word=options.wake_word,
-    )
+    # conversation = Conversation(
+    #     listener=listener,
+    #     text_generator=text_generator,
+    #     responder=responder,
+    #     safe_word=options.safe_word,
+    #     wake_word=options.wake_word,
+    # )
 
-    conversation.start_conversation()
+    # conversation.start_conversation()
 
 
 if __name__ == "__main__":
