@@ -14,27 +14,27 @@ class InputDevices:
 
     py_audio = PyAudio()
 
-    @staticmethod
-    def get_list_of_input_devices() -> List[InputDevice]:
-        """Get a list of input devices on the current machine.
+    # @staticmethod
+    # def get_list_of_input_devices() -> List[InputDevice]:
+    #     """Get a list of input devices on the current machine.
 
-        Returns:
-            List of input device objects on the current machine.
-        """
-        logging.debug("InputDevices.get_list_of_input_devices called")
+    #     Returns:
+    #         List of input device objects on the current machine.
+    #     """
+    #     logging.debug("InputDevices.get_list_of_input_devices called")
 
-        pyaudio_input_devices: List[
-            PyAudioDeviceInfo
-        ] = InputDevices._get_all_pyaudio_input_devices()
-        input_devices: List[InputDevice] = []
+    #     pyaudio_input_devices: List[
+    #         PyAudioDeviceInfo
+    #     ] = InputDevices._get_all_pyaudio_input_devices()
+    #     input_devices: List[InputDevice] = []
 
-        for input_device in pyaudio_input_devices:
-            device_index: int = cast(int, input_device["index"])
-            device_name: str = cast(str, input_device["name"])
-            input_devices.append(InputDevice(device_index, device_name))
+    #     for input_device in pyaudio_input_devices:
+    #         device_index: int = cast(int, input_device["index"])
+    #         device_name: str = cast(str, input_device["name"])
+    #         input_devices.append(InputDevice(device_index, device_name))
 
-        logging.info(f"Found {len(input_devices)} input devices.")
-        return input_devices
+    #     logging.info(f"Found {len(input_devices)} input devices.")
+    #     return input_devices
 
     @staticmethod
     def _get_all_pyaudio_input_devices() -> List[PyAudioDeviceInfo]:
